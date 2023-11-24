@@ -12,20 +12,22 @@
 
         display: block;
         padding: 8px 0 ;
-    }
 
-    img{    
-        display: block;
-        margin: 8px auto;
-        width: 24px;
-        height: auto;
-
-
-        &.sub-logo{
-
-            width: 50px;
+        img{    
+            display: block;
+            margin: 8px auto;
+            width: 24px;
+            height: auto;
+    
+    
+            &.sub-logo{
+    
+                width: 50px;
+            }
         }
     }
+
+
 
     nav{
         display: block;
