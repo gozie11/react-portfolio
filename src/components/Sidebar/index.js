@@ -4,6 +4,7 @@ import LogoS from '../../assets/images/logo-s.png'
 import LogoSubtitle from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faUser, faHome } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons'
 const Sidebar = () => (
     <div className="nav-bar">
         <Link className = 'logo' to = '/'>
@@ -27,6 +28,36 @@ const Sidebar = () => (
             </NavLink>
 
         </nav>
+        <ul>
+            <li>
+                <a href="https://www.linkedin.com/in/gozieonyia" 
+                target="_blank" 
+                rel="noreferrer">
+                    <FontAwesomeIcon icon={faLinkedin} color='#4d4d4e'/>
+                    </a>
+            </li>
+            <li>
+                <a href="https://www.github.com/gozie11" 
+                target="_blank" 
+                rel="noreferrer">
+                    <FontAwesomeIcon icon={faGithub} color='4d4d4e'/>
+                    </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/GozieOnyia11" 
+                target="_blank" 
+                rel="noreferrer">
+                    <FontAwesomeIcon icon={faTwitter} color='4d4d4e'/>
+                    </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@GoziePO" 
+                target="_blank" 
+                rel="noreferrer">
+                    <FontAwesomeIcon icon={faYoutube} color='4d4d4e'/>
+                    </a>
+            </li>
+        </ul>
     </div>
 )
 
