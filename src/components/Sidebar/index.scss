@@ -6,7 +6,7 @@
     top: 0;
     z-index: 3;
     min-height : 500px;
-}
+
 
     .logo{
 
@@ -79,14 +79,16 @@
                 content: 'HOME';
                 }
             }
-
-
         }
+
+
         a.about-link{
             &:after{
                 content: 'ABOUT';
             }
         }
+
+
         a.contact-link{
             &:after{
                 content: 'CONTACT';
@@ -100,3 +102,4 @@
             }
         }
     }
+}
