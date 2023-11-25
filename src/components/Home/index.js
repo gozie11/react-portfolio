@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import LogoTitle from '../../assets/images/logo-s.png'
 import './index.scss';
 import AnimatedLetters from '../AnimatedLetters';
 const Home = () => {
-    const [letterClass, setLetterClass] = useState('text-antimate')
+    const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = ['G', 'o', 'z', 'i', 'e']
     // Below should be called welcome array
     const welcomeArray = ['W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'm', 'y', ' ', 'p', 'o', 'r', 't', 'f', 'o', 'l', 'i', 'o']
