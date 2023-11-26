@@ -4,8 +4,20 @@
     animation: bounceIn 1s 1s;
     animation-fill-mode: forwards;
     min-width: 10px;
-}
 
+    .text-animate-hover{
+        min-width: 10px;
+        display: inline-block;
+        animation-fill-mode: both;
+
+        &:hover{
+            animation: rubberBand 1s;
+            color:#ffd700 ;
+        }
+    }
+}
+// This is the range of characters that will be animated. You can add more if you want to.
+//The calc function is used to calculate the animation delay for each character.
 @for $i from 1 through 52 {
     .text-animate._#{$i} {
         animation-delay: #{calc($i / 10)}s;
