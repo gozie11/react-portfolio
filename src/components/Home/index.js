@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
 import AnimatedLetters from '../AnimatedLetters';
@@ -8,6 +8,17 @@ const Home = () => {
     // Below should be called welcome array
     const welcomeArray = ['W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'm', 'y', ' ', 'p', 'o', 'r', 't', 'f', 'o', 'l', 'i', 'o']
     
+    useEffect(() => {
+        const timer = setTimeout(() => {
+          setLetterClass('text-animate-hover')
+        }, 4000);
+        // Cleanup function!
+        // Chat gpt helped me with this. It's important to clear the timer when the component unmounts.
+        //otherwise it will keep trying to set the state after the component has been unmounted and create an error.
+        return () => clearTimeout(timer);
+    }, [])
+
+
     return (
         <div className="container home-page">
             <div className="text-zone">
