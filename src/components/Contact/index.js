@@ -92,6 +92,21 @@ const Contact = () => {
                     </form>
                     </div>
             </div>
+            
+            <div className="info-map">
+                Gozie Onyia <br/>
+                United States, <br/>
+                Austin Texas, 78613 <br/>
+                <span>gozieo7@gmail.com</span>
+                
+            </div>
+            <div className="map-wrap">
+                <MapContainer center = {[30.33375, 97.75422]} zoom={13}>
+                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+                </MapContainer>
+            </div>
+
             </div>
         <Loader type='pacman'/>
         </>
