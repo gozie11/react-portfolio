@@ -1,11 +1,14 @@
 import Loader from 'react-loaders'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser'
 
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
+
+    const refForm = useRef();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -16,6 +19,27 @@ const Contact = () => {
         //otherwise it will keep trying to set the state after the component has been unmounted and create an error.
         return () => clearTimeout(timer);
     }, [])
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs
+        .sendForm(
+            'service_aa0iuqh',
+            'template_swlvb8e',
+            form.current,
+            '4WlcgplJhXLyJ7oNB'
+            )
+            .then(
+                () => {
+                    alert('Message sent successfully!')
+                    window.location.reload(false)
+                },
+                () => {
+                    alert('Message failed to send, please try again.')
+                }
+            ) 
+    }
+
     return(
         <>
         <div className="container contact-page">
@@ -33,7 +57,7 @@ const Contact = () => {
                     like to work together, please feel free to reach out to me!
                 </p>
                 <div className="contact-form">
-                    <form>
+                    <form ref = {refForm onsubmit={sendEmail}}>
                         <ul>
                             <li className='half'>
                                 <input type="text" name='name' placeholder="Name" required/>
